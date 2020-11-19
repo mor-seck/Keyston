@@ -1,4 +1,4 @@
-const Types = require('@keystonejs/fields');
+const Types  = require('@keystonejs/fields');
 const access = require("../services/services");
 
 module.exports = {
