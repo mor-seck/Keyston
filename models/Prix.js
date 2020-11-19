@@ -3,12 +3,12 @@ const access = require("../services/services");
 
 module.exports = {
   fields: {
-    PrixBateau: {
+    Prix: {
       type: Types.Integer,
       isRequired: true
     }
   },
-  labelField: 'PrixBateau',
+  labelField: 'Prix',
   //access.userIsAdminOrOwner,
   access: {
     read: true,

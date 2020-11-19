@@ -1,4 +1,4 @@
-const Types = require('@keystonejs/fields');
+const Types  = require('@keystonejs/fields');
 const access = require("../services/services");
 
 module.exports = {
@@ -6,33 +6,35 @@ module.exports = {
     Nom: {
       type: Types.Text
     },
-    Type: {
+    MarqueElectronique: {
       type: Types.Relationship,
-      ref: 'Type',
+      ref : "MarqueElectronique",
       many: false
     },
-    chargeUtile: {
-      type: Types.Text
-    },
-    poidsEnCharge: {
-      type: Types.Integer
+
+    Type: {
+      type: Types.Relationship,
+      ref : "TypeDeBateau",
+      many: false
     },
     Taille: {
-      type: Types.Integer
+      type: Types.Integer,
     },
+
     AnneeMiseEnService: {
       type: Types.Relationship,
-      ref: 'AnneeMiseEnService',
+      ref : 'AnneeMiseEnService',
       many: false
     },
 
   },
+
   labelField: 'Nom',
   access: {
-    read: true, //access.userIsAdminOrOwner,
+    read  : true, //access.userIsAdminOrOwner,
     update: access.userIsAdminOrOwner,
     create: access.userIsAdmin,
     delete: access.userIsAdmin,
-    auth: true,
+    auth  : true,
   },
 };

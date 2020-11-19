@@ -1,5 +1,5 @@
-const Types  = require('@keystonejs/fields');
-const access = require("../services/services");
+const Types             = require('@keystonejs/fields');
+const access            = require("../services/services");
 const ServiceFileUpload = require("../services/ServiceFileUpload");
 
 module.exports = {
@@ -7,53 +7,53 @@ module.exports = {
     NomDuBateau: {
         type: Types.Text
     },
-    PrixBateau: {
+    Prix: {
       type: Types.Relationship,
-      ref: "PrixBateau",
+      ref : "Prix",
       many: false
     },
     Type: {
       type: Types.Relationship,
-      ref: "Type",
+      ref : "Type",
       many: false
     },
     TypeDeBateau: {
       type: Types.Relationship,
-      ref: "TypeDeBateau",
+      ref : "TypeDeBateau",
       many: false
     },
     MarqueBateau: {
       type: Types.Relationship,
-      ref: 'MarqueBateau',
+      ref : 'MarqueBateau',
       many: false
     },
     TailleBateau: {
       type: Types.Relationship,
-      ref: 'TailleBateau',
+      ref : 'TailleBateau',
       many: false
     },
     MoteurBateau: {
       type: Types.Relationship,
-      ref: 'MoteurBateau',
+      ref : 'MoteurBateau',
       many: false
     },
-    AnneeMiseEnServiceBateau: {
+    AnneeMiseEnService: {
       type: Types.Relationship,
-      ref: 'AnneeMiseEnServiceBateau',
+      ref : 'AnneeMiseEnService',
       many: false
     },
     Remarque: {
-      type: Types.Text,
+      type       : Types.Text,
       isMultiline: true
     },
     ImagesBateau: {
       type: Types.Relationship,
-      ref: 'ImagesBateau',
+      ref : 'ImagesBateau',
       many: true
     },
     Fichier: {
-      type: Types.File,
-      adapter: ServiceFileUpload,
+      type      : Types.File,
+      adapter   : ServiceFileUpload,
       isRequired: true,
       hooks: {
         beforeChange: async ({ existingItem }) => {
@@ -67,11 +67,11 @@ module.exports = {
   },
   labelField: 'NomDuBateau',
   access: {
-    read: true, //access.userIsAdminOrOwner,
+    read  : true, //access.userIsAdminOrOwner,
     update: access.userIsAdminOrOwner,
     create: access.userIsAdmin,
     delete: access.userIsAdmin,
-    auth: true,
+    auth  : true,
   },
   hooks: {
     afterDelete: async ({ existingItem }) => {

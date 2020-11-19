@@ -4,23 +4,25 @@ const { Text, Checkbox, Password } = require('@keystonejs/fields');
 const { GraphQLApp }               = require('@keystonejs/app-graphql');
 const { AdminUIApp }               = require('@keystonejs/app-admin-ui');
 const initialiseData               = require('./initial-data');
-const { MongooseAdapter: Adapter } = require('@keystonejs/adapter-mongoose');
-const PROJECT_NAME                 = 'LeporiMarine';
+const { MongooseAdapter:Adapter } = require('@keystonejs/adapter-mongoose');
+const PROJECT_NAME                 = 'Lepori Marine';
 const adapterConfig                = { mongoUri: 'mongodb://localhost/lepori-marine' };
 
 //models require
 const MarqueBateau             = require('./models/MarqueBateau');
 const TypeDeBateau             = require('./models/TypeDeBateau');
 const Type                     = require('./models/Type');
-const PrixBateau               = require('./models/PrixBateau');
+const Prix               = require('./models/Prix');
 const TailleBateau             = require('./models/TailleBateau');
 const ImagesBateau             = require('./models/ImagesBateau');
-const AnneeMiseEnServiceBateau = require('./models/AnneeMiseEnServiceBateau');
+const AnneeMiseEnService = require('./models/AnneeMiseEnService');
 const Bateau                   = require('./models/Bateau');
 const MoteurBateau             = require('./models/MoteurBateau');
 const Moteur                   = require('./models/Moteur');
 const Remorque                 = require('./models/Remorque');
 const MarqueMoteur             = require('./models/MarqueMoteur');
+const MarqueElectronique       = require('./models/MarqueElectronique');
+const Electronique             = require('./models/Electronique');
 
 
 const keystone = new Keystone({
@@ -80,15 +82,17 @@ keystone.createList('User', {
 keystone.createList('MarqueBateau', MarqueBateau);
 keystone.createList('TypeDeBateau', TypeDeBateau);
 keystone.createList('Type', Type);
-keystone.createList('PrixBateau', PrixBateau);
+keystone.createList('Prix', Prix);
 keystone.createList('TailleBateau', TailleBateau);
 keystone.createList('ImagesBateau', ImagesBateau);
-keystone.createList('AnneeMiseEnServiceBateau', AnneeMiseEnServiceBateau);
+keystone.createList('AnneeMiseEnService', AnneeMiseEnService);
 keystone.createList('Bateau', Bateau);
 keystone.createList('MoteurBateau', MoteurBateau);
 keystone.createList('Moteur', Moteur);
 keystone.createList('Remorque', Remorque);
 keystone.createList('MarqueMoteur', MarqueMoteur);
+keystone.createList('MarqueElectronique', MarqueElectronique);
+keystone.createList('Electronique', Electronique);
 
 
 

@@ -33,15 +33,15 @@ module.exports = {
     NombreHeureDeMarche: {
       type: Types.Integer,
     },
-    AnneeMiseEnServiceBateau: {
+    AnneeMiseEnService: {
       type: Types.Relationship,
-      ref: 'AnneeMiseEnServiceBateau',
+      ref: 'AnneeMiseEnService',
       many: false
-    },
-    
+    },    
   },
-
+  
   labelField: 'Nom',
+
   access: {
     read: true, //access.userIsAdminOrOwner,
     update: access.userIsAdminOrOwner,
